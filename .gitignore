@@ -1,2 +1,14 @@
-DS.Store
-\.idea
+/.idea
+.DS_Store
+/vendor
+/node_modules
+vendor/bin/
+vendor/coderstephen/
+vendor/composer/
+vendor/container-interop/
+Would skip repository vendor/devristo/phpws
+vendor/evenement/
+vendor/guzzlehttp/
+vendor/psr/
+vendor/react/
+vendor/zendframework/

@@ -1,5 +1,12 @@
 <?php
+require_once("/etc/apache2/capstone-mysql/encrypted-config.php");
 require_once('vendor/autoload.php');
+
+// use Edu\Cnm\PhpSlackBot\Bots;
+
+/**
+ * Sample Slackbot
+ **/
 
 //grab mySQL statement
 $config = readConfig("/etc/apache2/capstone-mysql/piomirrors.ini");
@@ -15,3 +22,14 @@ $client->setToken($slack);
 $client->connect();
 
 $loop->run();
+
+// add a callback that lets the bot read any incoming messages into a slack channel
+$client->connect();
+
+$client->on('message', function($data) use ($client) {
+	echo "Incoming message: ".$data['text']."\n";
+});
+
+$loop->run();
+
+
